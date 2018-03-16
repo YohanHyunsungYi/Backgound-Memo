@@ -26,17 +26,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        topTextField.endEditing(true)
+        //topTextField.endEditing(true)
         bottomTextField.endEditing(true)
     }
     
     //Defult Attributes for Text Field
     let memeTextAttribues = [
-        NSStrokeColorAttributeName : UIColor.black,
-        NSForegroundColorAttributeName : UIColor.white,
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : NSNumber(value: -3.0)
+        NSAttributedStringKey.strokeColor.rawValue : UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue : UIColor.white,
+        NSAttributedStringKey.font.rawValue : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedStringKey.strokeWidth.rawValue : NSNumber(value: -3.0)
     ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,14 +74,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //Move the view when the keyboard covers the text field
-    func keyboardWillShow(notification: NSNotification){
+    @objc func keyboardWillShow(notification: NSNotification){
         if bottomTextField.isFirstResponder{
             self.view.frame.origin.y = 0 - getKeyboardHeight(notification as Notification)
+            if self.bottomTextField.text == "Place Your Memo" {
+                self.bottomTextField.text = ""
+            }
         }
     }
     
     //Return to nomal view when keyboard is hide
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
     }
     
