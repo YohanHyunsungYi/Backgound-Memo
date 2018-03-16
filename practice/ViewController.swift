@@ -41,8 +41,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configure(textfield: topTextField, text: "TOP")
-        configure(textfield: bottomTextField, text: "BOTTOM")
+       // configure(textfield: topTextField, text: "TOP")
+        configure(textfield: bottomTextField, text: "Place Your Memo")
     }
     
     func configure(textfield: UITextField, text: String){
@@ -153,7 +153,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     {
         toolBar.isHidden = true
         topToolBar.isHidden = true
-        topTextField.endEditing(true)
+        //topTextField.endEditing(true)
         bottomTextField.endEditing(true)
         
         //Render view to an image
@@ -186,7 +186,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         let memedImage = generateMemedImage()
         //Create the meme
-        let meme = Meme(topText: topTextField.text!, botText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        let meme = Meme(topText: "", botText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         self.meme = meme
         (UIApplication.shared.delegate as! AppDelegate).memes.append(self.meme)
     }
