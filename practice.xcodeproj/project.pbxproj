@@ -297,10 +297,11 @@
 				DEVELOPMENT_TEAM = 3FX78D9U2N;
 				INFOPLIST_FILE = practice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = YohanYi.practice;
+				PRODUCT_BUNDLE_IDENTIFIER = YohanHyunsungYi.MyBgMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -311,10 +312,11 @@
 				DEVELOPMENT_TEAM = 3FX78D9U2N;
 				INFOPLIST_FILE = practice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = YohanYi.practice;
+				PRODUCT_BUNDLE_IDENTIFIER = YohanHyunsungYi.MyBgMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
